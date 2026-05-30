@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Akash Shingate - Personal Portfolio Website of a Cybersecurity Specialist, VAPT Analyst, and Penetration Tester. Review cyber security assessments, servers hardening projects, and certifications.">
+  <meta name="keywords"
+    content="Akash Shingate, Cybersecurity, VAPT Engineer, Penetration Tester, Security Analyst, Web Security, API Security, Server Hardening">
+  <meta name="author" content="Akash Shingate">
+  <title>Akash Shingate | Cybersecurity Specialist & VAPT Engineer Portfolio</title>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Futuristic Background Effects -->
+  <div class="cyber-grid" aria-hidden="true"></div>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-mouse-glow" aria-hidden="true"></div>
+  <div class="laser-scanner-line" aria-hidden="true"></div>
+  <div class="scanlines-overlay" aria-hidden="true"></div>
+
+  <!-- HUD Telemetry Header Navbar -->
+  <header class="hud-navbar" id="hud-nav">
+    <a href="#home" class="navbar-logo" id="nav-logo">
+      <i data-lucide="shield-check" class="logo-accent"></i>
+      <span>SHINGATE<span class="logo-accent">.SEC</span></span>
+    </a>
+
+    <div class="hud-telemetry" id="telemetry-bar">
+      <div class="telemetry-item">
+        <div class="status-dot"></div>
+        <span>SYS_STATUS:</span> <strong style="color: #00ff66;">SECURE</strong>
+      </div>
+      <div class="telemetry-item">
+        <i data-lucide="activity" style="width: 14px; height: 14px;"></i>
+        <span>LATENCY:</span> <strong style="color: var(--text-main);">18ms</strong>
+      </div>
+      <div class="telemetry-item">
+        <i data-lucide="radar" style="width: 14px; height: 14px;"></i>
+        <span>VAPT_SCAN:</span> <strong style="color: #00ff66;">ACTIVE</strong>
+      </div>
+    </div>
+
+    <ul class="navbar-links" id="nav-links">
+      <li class="active"><a href="#home"><i data-lucide="terminal" style="width: 12px; height: 12px;"></i> HERO</a></li>
+      <li><a href="#about"><i data-lucide="user" style="width: 12px; height: 12px;"></i> ABOUT</a></li>
+      <li><a href="#skills"><i data-lucide="cpu" style="width: 12px; height: 12px;"></i> SKILLS</a></li>
+      <li><a href="#experience"><i data-lucide="calendar" style="width: 12px; height: 12px;"></i> TIMELINE</a></li>
+      <li><a href="#education"><i data-lucide="graduation-cap" style="width: 12px; height: 12px;"></i> EDUCATION</a>
+      </li>
+      <li><a href="#certifications"><i data-lucide="award" style="width: 12px; height: 12px;"></i> CERTS</a></li>
+      <li><a href="#contact"><i data-lucide="mail" style="width: 12px; height: 12px;"></i> CONTACT</a></li>
+    </ul>
+
+    <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+      <span class="bar bar-top"></span>
+      <span class="bar bar-middle"></span>
+      <span class="bar bar-bottom"></span>
+    </button>
+  </header>
+
+  <!-- Hero Landing Section -->
+  <main>
+    <section id="home" class="section hero-layout">
+      <div class="hero-content">
+        <div class="hero-identity">
+          <div class="hero-avatar-frame">
+            <div class="avatar-scanline"></div>
+            <img src="A.png" alt="Akash Shingate" class="hero-avatar">
+          </div>
+          <div class="hero-identity-text">
+            <div class="hero-status-tag" id="status-tag">
+              <div class="pulse-circle"></div>
+              <span>SECURE SHELL PROTOCOL ACTIVE</span>
+            </div>
+            <h1 class="hero-name" id="hero-title">Akash Shingate</h1>
+          </div>
+        </div>
+
+        <div class="hero-title-scroller" id="title-scroller">
+          <span id="typewriter-text"
+            style="color: var(--accent-red); font-weight: bold; text-shadow: 0 0 8px var(--accent-red-glow);"></span>
+        </div>
+
+        <p class="hero-desc" id="hero-tagline">
+          Securing digital infrastructures through advanced penetration testing, vulnerability assessment, and robust
+          configuration hardening. Experienced in identifying systemic critical risks and deploying countermeasures
+          across enterprise environments.
+        </p>
+
+        <div class="hero-ctas" id="hero-actions">
+          <a href="#skills" class="btn-cyber btn-cyber-primary" id="btn-view-skills">
+            <i data-lucide="eye" style="width: 16px; height: 16px;"></i> VIEW SKILLS
+          </a>
+          <a href="Akash Shingate Resume 2025 2.pdf" download="Akash_Shingate_Resume.pdf"
+            class="btn-cyber btn-cyber-secondary" id="btn-download-resume">
+            <i data-lucide="download" style="width: 16px; height: 16px;"></i> DOWNLOAD RESUME
+          </a>
+          <a href="#contact" class="btn-cyber btn-cyber-secondary" id="btn-contact-me">
+            <i data-lucide="send" style="width: 16px; height: 16px;"></i> SECURE CONTACT
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-side-panel" id="hero-hud-widgets">
+        <!-- Interactive Terminal Simulator -->
+        <div class="terminal-window" id="shell-simulator">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <div class="terminal-dot dot-red"></div>
+              <div class="terminal-dot dot-yellow"></div>
+              <div class="terminal-dot dot-green"></div>
+            </div>
+            <span class="terminal-title">bash - vapt_scan.sh</span>
+            <i data-lucide="terminal" style="width: 12px; height: 12px; color: var(--text-dark);"></i>
+          </div>
+          <div class="terminal-body" id="hero-terminal-body">
+            <!-- Simulated logs print here -->
+          </div>
+        </div>
+
+        <!-- Live Threat Feed Telemetry Widget -->
+        <div class="threat-monitor-widget" id="threat-feed">
+          <div class="widget-header">
+            <div class="widget-title">
+              <i data-lucide="shield-alert" style="width: 14px; height: 14px;"></i>
+              <span>THREAT MONITORING INTELLIGENCE</span>
+            </div>
+            <span class="widget-status">IDS LIVE</span>
+          </div>
+          <div class="threat-list" id="threat-list">
+            <!-- Threat alerts feed here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section reveal">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span class="section-title-accent">01 //</span> SECURITY_OVERVIEW
+          <span class="section-title-line"></span>
+        </h2>
+        <div class="section-subtitle">CREDENTIALS_AND_VAPT_EXPERIENCE</div>
+      </div>
+
+      <div class="about-grid">
+        <div class="cyber-card about-summary" id="about-card-profile">
+          <h3
+            style="font-family: var(--font-header); letter-spacing: 1px; color: var(--accent-red); margin-bottom: 10px;">
+            PROFESSIONAL DOSSIER</h3>
+          <p>
+            I am a results-driven Cybersecurity Analyst and VAPT Engineer with a year of active experience delivering
+            comprehensive vulnerability analysis and system audits. Specializing in Web Application, API, Mobile
+            (Android/iOS), and Network security environments, I focus on identifying critical risk vectors before threat
+            actors exploit them.
+          </p>
+          <p>
+            My approach blends rigorous manual testing methodologies (OWASP Top 10, SANS 25) with specialized automated
+            tooling to guarantee optimal infrastructure safety. I assist corporate, enterprise, and international
+            clients in fortifying their application architectures against modern threat factors.
+          </p>
+
+          <div class="about-highlight-box" id="overview-highlight">
+            <h4
+              style="font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 1px; color: var(--text-main); margin-bottom: 5px;">
+              SPECIALIZATION SNAPSHOT:</h4>
+            <p style="font-size: 0.85rem; color: var(--text-main);">
+              Penetration Testing (Web, API, Mobile, Network) • Secure Code Auditing • Configuration Hardening &
+              Mitigation Verification • Cloud Telemetry Review
+            </p>
+          </div>
+
+          <div class="about-highlight-box" id="bug-bounty-highlight"
+            style="border-left-color: #00ff66; background: rgba(0, 255, 102, 0.03); margin-top: 15px;">
+            <h4
+              style="font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 1px; color: #00ff66; margin-bottom: 5px;">
+              BUG BOUNTY ACCOMPLISHMENT:</h4>
+            <p style="font-size: 0.85rem; color: var(--text-main); line-height: 1.5;">
+              <strong>PokerBaazi Bounty Award:</strong> Identified and reported Unauthenticated Access and PII
+              Disclosure bugs. Provided mitigation strategies and performed a post-patch reassessment to confirm
+              resolution.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-stats" id="about-stats-panel">
+          <div class="stat-box cyber-card" id="stat-experience">
+            <div class="stat-number">1+</div>
+            <div class="stat-label">Years VAPT Exp</div>
+          </div>
+          <div class="stat-box cyber-card" id="stat-projects">
+            <div class="stat-number">70+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-box cyber-card" id="stat-hardening">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Hardened Rate</div>
+          </div>
+          <div class="stat-box cyber-card" id="stat-clients">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Satisfied Clients</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section reveal">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span class="section-title-accent">02 //</span> SKILLS_DASHBOARD
+          <span class="section-title-line"></span>
+        </h2>
+        <div class="section-subtitle">CAPABILITIES_AND_TOOLKITS</div>
+      </div>
+
+      <div class="skills-wrapper">
+        <!-- Tech Skills Column -->
+        <div class="cyber-card" id="skills-assessment-card">
+          <h3 class="skills-column-title">
+            <i data-lucide="shield" style="width: 18px; height: 18px;"></i>
+            <span>VULNERABILITY ASSESSMENT & PENTESTING</span>
+          </h3>
+          <div class="tech-skills-list">
+            <div class="skill-progress-bar">
+              <div class="skill-info">
+                <span class="skill-name">Web Application Pentesting (OWASP Top 10)</span>
+                <span class="skill-percentage">95%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" data-percent="95"></div>
+              </div>
+            </div>
+
+            <div class="skill-progress-bar">
+              <div class="skill-info">
+                <span class="skill-name">API Security Testing</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" data-percent="90"></div>
+              </div>
+            </div>
+
+            <div class="skill-progress-bar">
+              <div class="skill-info">
+                <span class="skill-name">Mobile Application Security (Android / iOS)</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" data-percent="80"></div>
+              </div>
+            </div>
+
+            <div class="skill-progress-bar">
+              <div class="skill-info">
+                <span class="skill-name">Network & Infrastructure Audits</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" data-percent="85"></div>
+              </div>
+            </div>
+
+            <div class="skill-progress-bar">
+              <div class="skill-info">
+                <span class="skill-name">Secure Code Review & Cloud Config</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" data-percent="80"></div>
+              </div>
+            </div>
+
+            <div class="skill-progress-bar">
+              <div class="skill-info">
+                <span class="skill-name">Server Hardening (Linux, IIS Server)</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" data-percent="85"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft Skills Panel -->
+          <div class="soft-skills-panel"
+            style="margin-top: 30px; border-top: 1px dashed rgba(255, 26, 26, 0.15); padding-top: 25px;">
+            <h4
+              style="font-family: var(--font-header); font-size: 0.9rem; color: var(--text-main); margin-bottom: 15px; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="brain" style="color: var(--accent-red); width: 16px; height: 16px;"></i>
+              <span>SOFT SKILLS COGNITIVE VECTORS</span>
+            </h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <span class="vuln-tag"
+                style="background: rgba(0, 255, 102, 0.02); border-color: rgba(0, 255, 102, 0.12); color: #9ea4b0;">Ethical
+                Integrity</span>
+              <span class="vuln-tag"
+                style="background: rgba(0, 255, 102, 0.02); border-color: rgba(0, 255, 102, 0.12); color: #9ea4b0;">Adaptability</span>
+              <span class="vuln-tag"
+                style="background: rgba(0, 255, 102, 0.02); border-color: rgba(0, 255, 102, 0.12); color: #9ea4b0;">Project
+                Management</span>
+              <span class="vuln-tag"
+                style="background: rgba(0, 255, 102, 0.02); border-color: rgba(0, 255, 102, 0.12); color: #9ea4b0;">Cross-functional
+                Collaboration</span>
+              <span class="vuln-tag"
+                style="background: rgba(0, 255, 102, 0.02); border-color: rgba(0, 255, 102, 0.12); color: #9ea4b0;">Technical
+                Communication</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Tools Column -->
+        <div class="cyber-card" id="tools-inventory-card">
+          <h3 class="skills-column-title">
+            <i data-lucide="wrench" style="width: 18px; height: 18px;"></i>
+            <span>SECURITY TOOLKITS</span>
+          </h3>
+
+          <div class="tool-category-group">
+            <h4 class="tool-category-title"><i data-lucide="globe" style="width:14px;height:14px;"></i> WEB & API
+              SECURITY</h4>
+            <div class="tools-grid">
+              <div class="tool-card" id="tool-burpsuite">
+                <i data-lucide="binary"></i>
+                <span class="tool-name">Burp Suite Pro</span>
+              </div>
+              <div class="tool-card" id="tool-owaspzap">
+                <i data-lucide="shield-alert"></i>
+                <span class="tool-name">OWASP ZAP</span>
+              </div>
+              <div class="tool-card" id="tool-acunetix">
+                <i data-lucide="bug"></i>
+                <span class="tool-name">Acunetix</span>
+              </div>
+              <div class="tool-card" id="tool-postman">
+                <i data-lucide="send"></i>
+                <span class="tool-name">Postman API</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-category-group">
+            <h4 class="tool-category-title"><i data-lucide="network" style="width:14px;height:14px;"></i> NETWORK &
+              INFRASTRUCTURE</h4>
+            <div class="tools-grid">
+              <div class="tool-card" id="tool-kali">
+                <i data-lucide="terminal"></i>
+                <span class="tool-name">Kali Linux</span>
+              </div>
+              <div class="tool-card" id="tool-nmap">
+                <i data-lucide="radar"></i>
+                <span class="tool-name">Nmap</span>
+              </div>
+              <div class="tool-card" id="tool-wireshark">
+                <i data-lucide="navigation"></i>
+                <span class="tool-name">Wireshark</span>
+              </div>
+              <div class="tool-card" id="tool-metasploit">
+                <i data-lucide="skull"></i>
+                <span class="tool-name">Metasploit</span>
+              </div>
+              <div class="tool-card" id="tool-nessus">
+                <i data-lucide="activity"></i>
+                <span class="tool-name">Nessus Pro</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-category-group">
+            <h4 class="tool-category-title"><i data-lucide="smartphone" style="width:14px;height:14px;"></i> MOBILE
+              SECURITY AUDITING</h4>
+            <div class="tools-grid">
+              <div class="tool-card" id="tool-frida">
+                <i data-lucide="cpu"></i>
+                <span class="tool-name">Frida & Objection</span>
+              </div>
+              <div class="tool-card" id="tool-mobsf">
+                <i data-lucide="smartphone"></i>
+                <span class="tool-name">MobSF & Jadx</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-category-group">
+            <h4 class="tool-category-title"><i data-lucide="shield-check" style="width:14px;height:14px;"></i> SECURE
+              SDLC & APPSEC</h4>
+            <div class="tools-grid">
+              <div class="tool-card" id="tool-contrast">
+                <i data-lucide="shield-check"></i>
+                <span class="tool-name">Contrast Security</span>
+              </div>
+              <div class="tool-card" id="tool-fortify">
+                <i data-lucide="lock-keyhole"></i>
+                <span class="tool-name">Fortify SAST</span>
+              </div>
+              <div class="tool-card" id="tool-checkmarx">
+                <i data-lucide="scan-eye"></i>
+                <span class="tool-name">Checkmarx</span>
+              </div>
+              <div class="tool-card" id="tool-depcheck">
+                <i data-lucide="package"></i>
+                <span class="tool-name">Dependency Check</span>
+              </div>
+              <div class="tool-card" id="tool-jira">
+                <i data-lucide="check-square"></i>
+                <span class="tool-name">JIRA Portal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="section reveal">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span class="section-title-accent">03 //</span> WORK_HISTORY
+          <span class="section-title-line"></span>
+        </h2>
+        <div class="section-subtitle">PROFESSIONAL_JOURNEY_TIMELINE</div>
+      </div>
+
+      <div class="timeline-container" id="experience-timeline">
+        <!-- Entry 1 -->
+        <div class="timeline-item left" id="exp-ecw">
+          <div class="timeline-card">
+            <span class="timeline-date">JUL 2025 - PRESENT</span>
+            <h3>Application Security Analyst</h3>
+            <div class="timeline-company">
+              <i data-lucide="building-2" style="width: 14px; height: 14px;"></i>
+              <span>eClinicalWorks India Private Limited • Mumbai, MH</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Conducted SAST, DAST and IAST/AST security testing using Contrast Security Tool on web applications.
+              </li>
+              <li>Managed Patches and Builds Vulnerability Assessment Process while working in Secure SDLC.</li>
+              <li>Performed SCA for dependencies and jar files and validated CVE's.</li>
+              <li>Conducted Functional Specification and Design Specification Reviews for new requirements.</li>
+              <li>Triaged reports based on external and internal requests for reported bugs on JIRA Portal.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Entry 2 -->
+        <div class="timeline-item right" id="exp-techdefence">
+          <div class="timeline-card">
+            <span class="timeline-date">DEC 2023 - JUN 2025</span>
+            <h3>Security Analyst</h3>
+            <div class="timeline-company">
+              <i data-lucide="building-2" style="width: 14px; height: 14px;"></i>
+              <span>Techdefence Labs Solutions Limited • Ahmedabad, GJ (On-site)</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Executed more than 70+ VAPT Projects for network, web applications (static/dynamic), API, and mobile
+                (Android/iOS) environments.</li>
+              <li>Identified and reported 300+ vulnerabilities across various client platforms.</li>
+              <li>Worked with Enterprise, SEBI clients, NBFCs, Banks, Healthcare, Government, and International clients.
+              </li>
+              <li>Deployed on-site for Adani Enterprise Limited and VE Commercial Vehicles Limited (Volvo Eicher Joint
+                Venture) for pentesting and security hardening.</li>
+              <li>Interviewed and assessed candidates for Security Analyst Intern and Security Analyst roles.</li>
+              <li>Applied cybersecurity standards: OWASP Top 10, PTES, CIS, NIST, WASC, SANS-25, OSSTMM, and ISO27001.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Entry 3 -->
+        <div class="timeline-item left" id="exp-parul-placement">
+          <div class="timeline-card">
+            <span class="timeline-date">AUG 2023 - NOV 2023</span>
+            <h3>Placement Co-ordinator</h3>
+            <div class="timeline-company">
+              <i data-lucide="building-2" style="width: 14px; height: 14px;"></i>
+              <span>Parul University • Vadodara, GJ</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Led a team of 9 members in coordinating and facilitating the placement process for over 300 students.
+              </li>
+              <li>Collaborated with internal teams to address candidate queries and manage recruitment seating
+                arrangements.</li>
+              <li>Assisted the HR team in resume shortlisting, evaluating candidate qualifications to streamline
+                recruitment.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section reveal">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span class="section-title-accent">04 //</span> ACADEMIC_DOSSIER
+          <span class="section-title-line"></span>
+        </h2>
+        <div class="section-subtitle">EDUCATION_AND_ACADEMIC_HISTORY</div>
+      </div>
+
+      <div class="education-grid">
+        <!-- B.Tech Card -->
+        <div class="cyber-card education-card" id="edu-btech">
+          <div class="edu-icon-wrap">
+            <i data-lucide="graduation-cap" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div class="edu-details">
+            <span class="edu-date">DEC 2021 – MAY 2024</span>
+            <h3>B.Tech in Cybersecurity</h3>
+            <div class="edu-institution">Parul University • Vadodara, GJ</div>
+            <div class="edu-score">CGPA: <strong>7.09 / 10</strong></div>
+          </div>
+        </div>
+
+        <!-- Diploma Card -->
+        <div class="cyber-card education-card" id="edu-diploma">
+          <div class="edu-icon-wrap">
+            <i data-lucide="school" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div class="edu-details">
+            <span class="edu-date">AUG 2019 – AUG 2021</span>
+            <h3>Diploma in Computer Science Engineering</h3>
+            <div class="edu-institution">Government Polytechnic • Jintur, MH</div>
+            <div class="edu-score">Percentage: <strong>84.52%</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section reveal">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span class="section-title-accent">05 //</span> VERIFIED_CREDENTIALS
+          <span class="section-title-line"></span>
+        </h2>
+        <div class="section-subtitle">HOLOGRAPHIC_SECURITY_BADGES</div>
+      </div>
+
+      <div class="certs-grid" id="certs-badges-container">
+        <!-- Cert 1: eJPT -->
+        <div class="cert-card" id="cert-ejpt" data-cert-src="cert_ejpt.jpeg"
+          data-cert-title="eJPT (Junior Penetration Tester) - INE Security">
+          <div class="cert-badge-hologram">eJPT</div>
+          <div class="cert-title">Junior Penetration Tester</div>
+          <div class="cert-issuer">INE Security</div>
+          <div class="cert-verify-ui"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i>
+            CLICK_TO_VIEW</div>
+        </div>
+
+        <!-- Cert 2: ICCA -->
+        <div class="cert-card" id="cert-icca" data-cert-src="cert_icca.jpeg"
+          data-cert-title="ICCA (INE Certified Cloud Associate) - INE Security">
+          <div class="cert-badge-hologram">ICCA</div>
+          <div class="cert-title">Certified Cloud Associate</div>
+          <div class="cert-issuer">INE Security</div>
+          <div class="cert-verify-ui"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i>
+            CLICK_TO_VIEW</div>
+        </div>
+
+        <!-- Cert 3: CSEDP -->
+        <div class="cert-card" id="cert-csedp" data-cert-src="cert_csedp.jpeg"
+          data-cert-title="CSEDP (Certified Social Engineering Defense Practitioner) - The SecOps Group">
+          <div class="cert-badge-hologram">CSEDP</div>
+          <div class="cert-title">Social Eng. Defense Practitioner</div>
+          <div class="cert-issuer">The SecOps Group (Merit)</div>
+          <div class="cert-verify-ui"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i>
+            CLICK_TO_VIEW</div>
+        </div>
+
+        <!-- Cert 4: CNSP -->
+        <div class="cert-card" id="cert-cnsp" data-cert-src="cert_cnsp.jpeg"
+          data-cert-title="CNSP (Certified Network Security Practitioner) - The SecOps Group">
+          <div class="cert-badge-hologram">CNSP</div>
+          <div class="cert-title">Network Security Practitioner</div>
+          <div class="cert-issuer">The SecOps Group (Merit)</div>
+          <div class="cert-verify-ui"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i>
+            CLICK_TO_VIEW</div>
+        </div>
+
+        <!-- Cert 5: CAP -->
+        <div class="cert-card" id="cert-cap" data-cert-src="cert_cap.jpeg"
+          data-cert-title="CAP (Certified AppSec Practitioner) - The SecOps Group">
+          <div class="cert-badge-hologram">CAP</div>
+          <div class="cert-title">AppSec Practitioner</div>
+          <div class="cert-issuer">The SecOps Group (Merit)</div>
+          <div class="cert-verify-ui"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i>
+            CLICK_TO_VIEW</div>
+        </div>
+
+        <!-- Cert 6: ISC2 CC -->
+        <div class="cert-card" id="cert-isc2-cc" data-cert-src="cert_cc.jpeg"
+          data-cert-title="ISC2 CC (Certified in Cybersecurity) - ISC2">
+          <div class="cert-badge-hologram">ISC2 CC</div>
+          <div class="cert-title">Certified in Cybersecurity</div>
+          <div class="cert-issuer">ISC2</div>
+          <div class="cert-verify-ui"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i>
+            CLICK_TO_VIEW</div>
+        </div>
+
+        <!-- Cert 7: Baazi Games Bug Bounty -->
+        <div class="cert-card" id="cert-baazi" data-cert-src="cert_baazi_games.jpeg"
+          data-cert-title="Bug Bounty Appreciation Certificate - Baazi Games">
+          <div class="cert-badge-hologram" style="font-size: 0.7rem; border-style: dotted;">BUG BOUNTY</div>
+          <div class="cert-title">Baazi Games Bug Bounty</div>
+          <div class="cert-issuer">Baazi Games (Appreciation)</div>
+          <div class="cert-verify-ui"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i>
+            CLICK_TO_VIEW</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section reveal">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span class="section-title-accent">06 //</span> RESEARCH_DOCUMENTS
+          <span class="section-title-line"></span>
+        </h2>
+        <div class="section-subtitle">PUBLISHED_PAPERS_AND_STUDIES</div>
+      </div>
+
+      <div class="publications-grid">
+        <!-- Left Column: Pub Details -->
+        <div class="cyber-card publication-card" id="publication-card-android">
+          <div class="pub-icon-wrap" id="pub-icon-wrapper">
+            <div class="pub-scanning-line"></div>
+            <i data-lucide="file-text"></i>
+          </div>
+          <div class="pub-details">
+            <h3>An Empirical Study of Developing Android Application</h3>
+            <div class="pub-meta">
+              <div><i data-lucide="book-open"
+                  style="width: 12px; height: 12px; display: inline; vertical-align: middle; margin-right: 4px;"></i>TYPE:
+                <span>Research Publication</span>
+              </div>
+              <div><i data-lucide="hash"
+                  style="width: 12px; height: 12px; display: inline; vertical-align: middle; margin-right: 4px;"></i>STATUS:
+                <span>Indexed / Academic</span>
+              </div>
+            </div>
+            <p class="pub-desc">
+              An empirical investigation analyzing developmental practices, architectural patterns, and systemic
+              security risks in native Android application development frameworks. The paper details vulnerability
+              mappings associated with Android components, insecure data storage patterns, and API integration
+              vulnerabilities.
+            </p>
+            <a href="https://www.irjmets.com/uploadedfiles/paper/issue_3_march_2024/51243/final/fin_irjmets1711741207.pdf"
+              target="_blank" rel="noopener noreferrer" class="btn-cyber btn-cyber-secondary"
+              style="padding: 10px 20px; font-size: 0.75rem;" id="btn-view-publication">
+              <i data-lucide="external-link" style="width: 12px; height: 12px;"></i> VIEW DOCUMENT
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Pub Certificate -->
+        <div class="cert-card" id="publication-cert-badge" data-cert-src="cert_publication.jpeg"
+          data-cert-title="Certificate of Publication (IRJMETS) - An Empirical Study of Developing Android Applications">
+          <div class="cert-badge-hologram" style="font-size: 0.75rem; border-style: double;">IRJMETS</div>
+          <div class="cert-title">Certificate of Publication</div>
+          <div class="cert-issuer">IRJMETS Journal</div>
+          <div class="cert-verify-ui"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i>
+            CLICK_TO_VIEW</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span class="section-title-accent">07 //</span> CONTACT_CENTER
+          <span class="section-title-line"></span>
+        </h2>
+        <div class="section-subtitle">ESTABLISH_ENCRYPTED_CONNECTION</div>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info-panel" id="contact-telemetry">
+          <div class="cyber-card" style="padding: 25px;" id="contact-hud-summary">
+            <h3
+              style="font-family: var(--font-header); font-size: 1.1rem; color: var(--accent-red); margin-bottom: 15px; letter-spacing: 1px;">
+              SECURE RELAY CHANNELS</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 25px;">
+              For secure communication regarding VAPT contracts, freelance audits, configuration audits, or system
+              hardening advisory, utilize the encrypted submission terminal or connect via the public keys below.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div class="contact-item" id="channel-email">
+                <div class="contact-icon-box">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>ENCRYPTED_EMAIL</h4>
+                  <p><a href="mailto:shingateakash1321@gmail.com">shingateakash1321@gmail.com</a></p>
+                </div>
+              </div>
+
+              <div class="contact-item" id="channel-linkedin">
+                <div class="contact-icon-box">
+                  <i data-lucide="linkedin"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>LINKEDIN_PORTAL</h4>
+                  <p><a href="https://linkedin.com/in/akash-shingate-vapt" target="_blank"
+                      rel="noopener noreferrer">linkedin.com/in/akash-shingate</a></p>
+                </div>
+              </div>
+
+              <div class="contact-item" id="channel-phone">
+                <div class="contact-icon-box">
+                  <i data-lucide="phone"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>SECURE_TEL</h4>
+                  <p><a href="tel:+919325386503">+91 93253 86503</a></p>
+                </div>
+              </div>
+
+              <div class="contact-item" id="channel-location">
+                <div class="contact-icon-box">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>SECURE_LOC</h4>
+                  <p>Maharashtra, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cyber-card" id="contact-form-card">
+          <h3
+            style="font-family: var(--font-header); font-size: 1.1rem; margin-bottom: 25px; letter-spacing: 1px; color: var(--accent-red); border-bottom: 1px solid rgba(255, 26, 26, 0.1); padding-bottom: 10px;">
+            TRANSMISSION PANEL</h3>
+          <form class="contact-form" id="contact-form" action="https://formsubmit.co/errorhunter1321@outlook.com"
+            method="POST" target="hidden-iframe">
+            <!-- FormSubmit Configurations -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <div class="form-group-row">
+              <div class="form-input-group">
+                <label for="form-name">CLIENT_NAME:</label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. John Doe" required>
+              </div>
+              <div class="form-input-group">
+                <label for="form-email">CLIENT_EMAIL:</label>
+                <input type="email" id="form-email" name="email" class="form-input"
+                  placeholder="e.g. contact@domain.com" required>
+              </div>
+            </div>
+
+            <div class="form-input-group">
+              <label for="form-subject">TRANSMISSION_SUBJECT:</label>
+              <input type="text" id="form-subject" name="subject" class="form-input"
+                placeholder="e.g. Core System VAPT Audit Contract" required>
+            </div>
+
+            <div class="form-input-group">
+              <label for="form-message">TRANSMISSION_PAYLOAD:</label>
+              <textarea id="form-message" name="message" class="form-input"
+                placeholder="Compose secure text block payload here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-cyber btn-cyber-primary" id="btn-submit-transmission">
+              <i data-lucide="shield-alert" style="width: 16px; height: 16px;"></i> TRANSMIT ENCRYPTED PAYLOAD
+            </button>
+          </form>
+
+          <!-- Hidden Iframe to prevent page redirection on form submit -->
+          <iframe name="hidden-iframe" style="display:none;" id="hidden-iframe"></iframe>
+
+          <!-- Simulated Console Logs for form submission -->
+          <div class="form-console-output" id="form-console">
+            <!-- Simulated logs printed via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer HUD Bar -->
+  <footer class="footer-bar" id="footer-hud">
+    <div class="footer-copy">
+      © 2026 AKASH SHINGATE. ALL SECURITY SYSTEMS ACTIVE. SECURED BY <span>eJPT // CNSP</span>
+    </div>
+    <div class="footer-status" id="footer-telemetry">
+      <i data-lucide="lock" style="width: 12px; height: 12px; color: #00ff66;"></i>
+      <span>TRANSMISSION ENCRYPTED // TLS 1.3</span>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Certificate Previews -->
+  <div class="lightbox-modal" id="cert-lightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close Preview">
+        <i data-lucide="x" style="width: 16px; height: 16px;"></i> CLOSE
+      </button>
+      <img src="" alt="Certificate Image Preview" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Lucide Icons Library CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Application JS Engine -->
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
