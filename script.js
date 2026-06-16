@@ -517,28 +517,46 @@ function initContactForm() {
    ========================================== */
 function initCertLightbox() {
   const certCards = document.querySelectorAll('.cert-card');
+  const profilePicFrame = document.querySelector('.hero-avatar-frame');
   const lightbox = document.getElementById('cert-lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
   const closeBtn = document.getElementById('lightbox-close-btn');
 
-  if (!lightbox || !lightboxImg || !lightboxCaption || certCards.length === 0) return;
+  if (!lightbox || !lightboxImg || !lightboxCaption) return;
 
-  // Open Lightbox
-  certCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const src = card.getAttribute('data-cert-src');
-      const title = card.getAttribute('data-cert-title');
-      
-      if (src) {
-        lightboxImg.src = src;
-        lightboxCaption.textContent = title || '';
-        lightbox.classList.add('active');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden'; // Lock background scrolling
-      }
+  // Open Lightbox for cert cards
+  if (certCards.length > 0) {
+    certCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const src = card.getAttribute('data-cert-src');
+        const title = card.getAttribute('data-cert-title');
+        
+        if (src) {
+          lightboxImg.src = src;
+          lightboxCaption.textContent = title || '';
+          lightbox.classList.add('active');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden'; // Lock background scrolling
+        }
+      });
     });
-  });
+  }
+
+  // Open Lightbox for profile pic
+  if (profilePicFrame) {
+    profilePicFrame.addEventListener('click', () => {
+      const avatarImg = profilePicFrame.querySelector('.hero-avatar');
+      const src = avatarImg ? avatarImg.getAttribute('src') : 'A.png';
+      const title = avatarImg ? avatarImg.getAttribute('alt') : 'Akash Shingate';
+      
+      lightboxImg.src = src;
+      lightboxCaption.textContent = title;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden'; // Lock background scrolling
+    });
+  }
 
   // Close Lightbox function
   function closeLightbox() {

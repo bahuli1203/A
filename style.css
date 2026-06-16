@@ -698,6 +698,7 @@ body {
   background: #000;
   flex-shrink: 0;
   transition: var(--transition-normal);
+  cursor: pointer;
 }
 
 .hero-identity:hover .hero-avatar-frame {
