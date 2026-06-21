@@ -448,12 +448,30 @@ function animateProgressBars() {
    9. Command Center Contact Form & Sim Terminal
    ========================================== */
 function initContactForm() {
-  const form = document.getElementById('contact-form');
+  const btn = document.getElementById('btn-initiate-contact');
   const consoleOut = document.getElementById('form-console');
-  if (!form || !consoleOut) return;
+  const tunnelStatus = document.getElementById('tunnel-status');
+  if (!btn || !consoleOut) return;
 
-  form.addEventListener('submit', (e) => {
+  btn.addEventListener('click', (e) => {
     e.preventDefault();
+
+    // Disable button to prevent multiple triggers
+    btn.setAttribute('disabled', 'true');
+    btn.style.opacity = '0.6';
+    btn.style.cursor = 'not-allowed';
+    btn.innerHTML = `<i data-lucide="loader-2" class="spin-icon" style="width: 16px; height: 16px; display: inline-block;"></i> SECURING LINK...`;
+    
+    // If Lucide is imported, re-create icons to show spinner icon
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // Update state to CONNECTING
+    if (tunnelStatus) {
+      tunnelStatus.textContent = 'CONNECTING';
+      tunnelStatus.style.color = '#ff9900';
+    }
 
     // Show simulation terminal
     consoleOut.style.display = 'block';
@@ -461,34 +479,22 @@ function initContactForm() {
     consoleOut.scrollTop = 0;
 
     const steps = [
-      { text: '[+] Establishing encrypted transmission handshake...', delay: 400 },
-      { text: '[+] Querying contact relay endpoint /v1/transmission...', delay: 800 },
-      { text: '[+] Exchanging ephemeral ECDH public keys with relay...', delay: 1200 },
-      { text: '[+] AES-256-GCM symmetric session keys negotiated.', delay: 1600 },
-      { text: '[+] Connecting to errorhunter1321@outlook.com relay...', delay: 2000 },
-      { text: '[+] Packing and transmitting cipher block...', delay: 2400 },
-      { text: '[+] Transmitting payload data: [====================] 100%', delay: 2900 },
-      { text: '[+] TRANSMISSION VERIFIED. Payload delivered successfully.', delay: 3500 }
+      { text: '[~] Initializing handshake sequence...', delay: 300 },
+      { text: '[~] Routing through gateway proxy for anonymity...', delay: 700 },
+      { text: '[~] Gateway handshake: SUCCESSFUL', delay: 1100 },
+      { text: '[~] Exchanging ECDHE-RSA keys with relay...', delay: 1500 },
+      { text: '[+] Negotiated encryption block: AES-256-GCM', delay: 1900 },
+      { text: '[~] Authenticating destination: forms.gle/odh2o88VVuPUpxkt6', delay: 2300 },
+      { text: '[+] SECURE TUNNEL ESTABLISHED.', delay: 2700 },
+      { text: '[+] Redirecting to secure channel...', delay: 3100 }
     ];
-
-    // Disable inputs & submit button during simulation
-    const inputs = form.querySelectorAll('input, textarea, button');
-    inputs.forEach(input => input.setAttribute('disabled', 'true'));
-
-    // Submit form programmatically in background via native submission.
-    // By calling form.submit(), we bypass the submit event listener and post natively to the hidden iframe.
-    try {
-      form.submit();
-    } catch (err) {
-      console.error('[-] Native form submission failed:', err);
-    }
 
     steps.forEach(step => {
       setTimeout(() => {
         const line = document.createElement('div');
-        if (step.text.includes('VERIFIED') || step.text.includes('AES-256')) {
+        if (step.text.includes('SUCCESSFUL') || step.text.includes('ESTABLISHED') || step.text.includes('AES-256')) {
           line.innerHTML = `<span style="color: #00ff66; font-weight: bold;">${step.text}</span>`;
-        } else if (step.text.includes('handshake') || step.text.includes('transmitting') || step.text.includes('Relay')) {
+        } else if (step.text.includes('Redirecting') || step.text.includes('handshake') || step.text.includes('Routing')) {
           line.innerHTML = `<span style="color: #ff9900;">${step.text}</span>`;
         } else {
           line.innerHTML = `<span>${step.text}</span>`;
@@ -496,16 +502,15 @@ function initContactForm() {
         consoleOut.appendChild(line);
         consoleOut.scrollTop = consoleOut.scrollHeight;
 
-        // Re-enable form after completion
-        if (step.delay === 3500) {
+        // Perform final transition and redirection
+        if (step.delay === 3100) {
+          if (tunnelStatus) {
+            tunnelStatus.textContent = 'ESTABLISHED';
+            tunnelStatus.style.color = '#00ff66';
+          }
           setTimeout(() => {
-            inputs.forEach(input => input.removeAttribute('disabled'));
-            form.reset();
-            // Optional: Hide simulated terminal after delay
-            setTimeout(() => {
-              consoleOut.style.display = 'none';
-            }, 6000);
-          }, 1000);
+            window.location.href = 'https://forms.gle/odh2o88VVuPUpxkt6';
+          }, 800);
         }
       }, step.delay);
     });

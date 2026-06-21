@@ -829,55 +829,35 @@
         <div class="cyber-card" id="contact-form-card">
           <h3
             style="font-family: var(--font-header); font-size: 1.1rem; margin-bottom: 25px; letter-spacing: 1px; color: var(--accent-red); border-bottom: 1px solid rgba(255, 26, 26, 0.1); padding-bottom: 10px;">
-            TRANSMISSION PANEL</h3>
-          <form class="contact-form" id="contact-form" action="https://formsubmit.co/errorhunter1321@outlook.com"
-            method="POST" target="hidden-iframe">
-            <!-- FormSubmit Configurations -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
+            SECURE RELAY GATEWAY</h3>
+          
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 25px;">
+            To contact Akash, click the button below to initialize the secure gateway. 
+            This will authorize a temporary routing link and redirect you to the Google Forms page.
+          </p>
 
-            <div class="form-group-row">
-              <div class="form-input-group">
-                <label for="form-name">CLIENT_NAME:</label>
-                <input type="text" id="form-name" name="Name" class="form-input" placeholder="e.g. John Doe" required>
-              </div>
-              <div class="form-input-group">
-                <label for="form-email">CLIENT_EMAIL:</label>
-                <input type="email" id="form-email" name="Email" class="form-input"
-                  placeholder="e.g. contact@domain.com" required>
-              </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; font-family: var(--font-mono); font-size: 0.75rem;">
+            <div style="border: 1px solid rgba(255, 26, 26, 0.1); padding: 10px; background: rgba(0, 0, 0, 0.2); border-radius: 4px;">
+              <span style="color: var(--text-dark);">SYS_GATEWAY:</span> <span style="color: #00ff66; font-weight: bold;">ONLINE</span>
             </div>
-
-            <div class="form-group-row">
-              <div class="form-input-group">
-                <label for="form-phone">CLIENT_PHONE:</label>
-                <input type="tel" id="form-phone" name="Contacts" class="form-input" placeholder="e.g. +91 93253 86503"
-                  required>
-              </div>
-              <div class="form-input-group">
-                <label for="form-subject">TRANSMISSION_SUBJECT:</label>
-                <input type="text" id="form-subject" name="Reason" class="form-input"
-                  placeholder="e.g. Core System VAPT Audit" required>
-              </div>
+            <div style="border: 1px solid rgba(255, 26, 26, 0.1); padding: 10px; background: rgba(0, 0, 0, 0.2); border-radius: 4px;">
+              <span style="color: var(--text-dark);">TUNNEL_STATE:</span> <span id="tunnel-status" style="color: var(--accent-red); font-weight: bold;">CLOSED</span>
             </div>
-
-            <div class="form-input-group">
-              <label for="form-message">TRANSMISSION_PAYLOAD:</label>
-              <textarea id="form-message" name="NOTES" class="form-input"
-                placeholder="Compose secure text block payload here..." required></textarea>
+            <div style="border: 1px solid rgba(255, 26, 26, 0.1); padding: 10px; background: rgba(0, 0, 0, 0.2); border-radius: 4px;">
+              <span style="color: var(--text-dark);">CIPHER_KEY:</span> <span style="color: var(--text-secondary);">ECDHE-RSA</span>
             </div>
+            <div style="border: 1px solid rgba(255, 26, 26, 0.1); padding: 10px; background: rgba(0, 0, 0, 0.2); border-radius: 4px;">
+              <span style="color: var(--text-dark);">RELAY_HOST:</span> <span style="color: var(--text-secondary);">FORMS.GLE</span>
+            </div>
+          </div>
 
-            <button type="submit" class="btn-cyber btn-cyber-primary" id="btn-submit-transmission">
-              <i data-lucide="shield-alert" style="width: 16px; height: 16px;"></i> TRANSMIT ENCRYPTED PAYLOAD
-            </button>
-          </form>
+          <button class="btn-cyber btn-cyber-primary" id="btn-initiate-contact" style="width: 100%; justify-content: center; margin-bottom: 20px;">
+            <i data-lucide="shield-alert" style="width: 16px; height: 16px;"></i> INITIATE SECURE LINK
+          </button>
 
-          <!-- Hidden Iframe to prevent page redirection on form submit -->
-          <iframe name="hidden-iframe" style="display:none;" id="hidden-iframe"></iframe>
-
-          <!-- Simulated Console Logs for form submission -->
-          <div class="form-console-output" id="form-console">
-            <!-- Simulated logs printed via JS -->
+          <!-- Simulated Console Logs for redirection -->
+          <div class="form-console-output" id="form-console" style="margin-top: 10px; border-color: rgba(255, 26, 26, 0.2); font-size: 0.75rem; height: 120px;">
+            <!-- Logs printed via JS -->
           </div>
         </div>
       </div>

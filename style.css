@@ -2438,3 +2438,12 @@ textarea.form-input {
   }
 }
 
+/* Spinner Animation for Redirect Handshake */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
